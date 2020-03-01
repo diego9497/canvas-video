@@ -8,9 +8,17 @@ if ("mediaDevices" in navigator && "getUserMedia" in navigator.mediaDevices) {
   alert("No hay soporte en este dispositivo");
 }
 
-navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
-  video.srcObject = stream;
-});
+navigator.mediaDevices
+  .getUserMedia({
+    video: {
+      facingMode: {
+        ideal: "enviroment"
+      }
+    }
+  })
+  .then(stream => {
+    video.srcObject = stream;
+  });
 
 let dimensiones = null;
 video.addEventListener("loadeddata", () => {
