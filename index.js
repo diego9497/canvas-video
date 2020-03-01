@@ -10,9 +10,10 @@ if ("mediaDevices" in navigator && "getUserMedia" in navigator.mediaDevices) {
 
 navigator.mediaDevices
   .getUserMedia({
-    video: {
-      facingMode: { exact: "environment" }
-    }
+    // video: {
+    //   facingMode: { exact: "environment" }
+    // }
+    video: true
   })
   .then(stream => {
     video.srcObject = stream;
