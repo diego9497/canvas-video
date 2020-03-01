@@ -11,9 +11,7 @@ if ("mediaDevices" in navigator && "getUserMedia" in navigator.mediaDevices) {
 navigator.mediaDevices
   .getUserMedia({
     video: {
-      facingMode: {
-        ideal: "enviroment"
-      }
+      facingMode: { exact: "environment" }
     }
   })
   .then(stream => {
